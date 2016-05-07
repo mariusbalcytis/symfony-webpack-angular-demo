@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0d816f401d4664729206930de041a802",
-    "content-hash": "0d9e40a8d6ee35cd3f5ae49af8a9c7c2",
+    "hash": "1ca542b318c2554eaea342745d27dbf7",
+    "content-hash": "5c28969f329abfcd41451a48242194a0",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -858,6 +858,106 @@
                 "sql"
             ],
             "time": "2014-01-12 16:20:24"
+        },
+        {
+            "name": "maba/dependency-injection-extra",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mariusbalcytis/dependency-injection-extra.git",
+                "reference": "f9b2d037a65391e64a79ac56711cdeb381a7ceec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mariusbalcytis/dependency-injection-extra/zipball/f9b2d037a65391e64a79ac56711cdeb381a7ceec",
+                "reference": "f9b2d037a65391e64a79ac56711cdeb381a7ceec",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2",
+                "symfony/dependency-injection": "^2.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Maba\\Component\\DependencyInjection\\": "src",
+                    "Maba\\Component\\DependencyInjection\\Tests\\": "test"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marius Balčytis",
+                    "email": "marius.balcytis@gmail.com"
+                }
+            ],
+            "keywords": [
+                "compiler pass",
+                "dependency injection",
+                "di"
+            ],
+            "time": "2015-07-23 23:35:43"
+        },
+        {
+            "name": "maba/webpack-bundle",
+            "version": "0.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mariusbalcytis/webpack-bundle.git",
+                "reference": "c7b9da87b022d250e26fafcdb33a5902e68a20a7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mariusbalcytis/webpack-bundle/zipball/c7b9da87b022d250e26fafcdb33a5902e68a20a7",
+                "reference": "c7b9da87b022d250e26fafcdb33a5902e68a20a7",
+                "shasum": ""
+            },
+            "require": {
+                "maba/dependency-injection-extra": "^0.1.0",
+                "php": ">=5.3.2",
+                "symfony/dependency-injection": "^2.3",
+                "symfony/framework-bundle": "^2.7",
+                "symfony/monolog-bundle": "^2.3",
+                "symfony/process": "^2.5",
+                "symfony/twig-bundle": "^2.3",
+                "twig/twig": "^1.12"
+            },
+            "require-dev": {
+                "codeception/codeception": "^2.1.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Maba\\Bundle\\WebpackBundle\\": "src",
+                    "Fixtures\\Maba\\Bundle\\WebpackTestBundle\\": "tests/functional/Fixtures/src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marius Balčytis",
+                    "email": "marius.balcytis@gmail.com"
+                }
+            ],
+            "description": "Bundle to Integrate Webpack to Symfony",
+            "keywords": [
+                "Symfony2",
+                "amd",
+                "assets",
+                "commonjs",
+                "symfony",
+                "webpack"
+            ],
+            "time": "2016-05-07 19:49:10"
         },
         {
             "name": "monolog/monolog",
@@ -2168,22 +2268,13 @@
             "time": "2016-04-05 16:36:54"
         }
     ],
-    "aliases": [
-
-    ],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.3.9"
     },
-    "platform-dev": [
-
-    ],
-    "platform-overrides": {
-        "php": "5.3.9"
-    }
+    "platform-dev": []
 }
