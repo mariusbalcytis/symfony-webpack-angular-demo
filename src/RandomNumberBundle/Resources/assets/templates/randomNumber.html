@@ -1,0 +1,5 @@
+<div class="random-number-container">
+    <label>Max: <input type="number" data-ng-init="max = 10" data-ng-model="max"/></label>
+    <div><button data-ng-click="result = vm.generate(max)">Generate</button></div>
+    <div class="result"><span data-ng-bind="result"></span></div>
+</div>

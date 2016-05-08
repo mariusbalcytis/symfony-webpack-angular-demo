@@ -1,4 +1,5 @@
 div.container {
-    font: bold 2.5em Verdana, sans-serif;
-    text-align: center;
+    font-family: Verdana, sans-serif;
+    margin: 20px auto;
+    width: 400px;
 }

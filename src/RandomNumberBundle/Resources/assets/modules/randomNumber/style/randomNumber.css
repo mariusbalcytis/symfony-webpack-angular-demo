@@ -1,0 +1,10 @@
+.random-number-container .result {
+    font-weight: bold;
+    text-align: center;
+}
+.random-number-container .result span {
+    width: 200px;
+    height: 1em;
+    border: 2px dashed #2e2e2e;
+    display: inline-block;
+}

@@ -7,12 +7,14 @@
 
     // we export module - this allows to easily add it to dependencies:
     // `require('.../main').name` would return `app` in this case
-    module.exports = require('angular').module('app', [
-        // required modules
-    ]);
+    module.exports = require('angular')
+        .module('app', [
+            'oc.lazyLoad',
+            require('router.module').name
+        ]);
 
     // we require all files inside `main` directory;
     // we put all module files inside separate directory to avoid requiring
     // "ourselves" and still being able to require all files instantly without explicitly providing each of them
-    requireAll(require.context('main', true));  // true means "use subdirectories"
+    requireAll(require.context('app', true));  // true means "use subdirectories"
 })();
