@@ -64,3 +64,9 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+maba_webpack:
+    config:
+        parameters:
+            extract_css: true
+            # This enables ExtractText plugin so we can provide initial CSS synchronously

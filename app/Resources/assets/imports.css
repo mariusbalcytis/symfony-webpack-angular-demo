@@ -1,0 +1,2 @@
+/* We can import other styles - webpack handles css imports, too */
+@import 'styles/main.css';
