@@ -10,7 +10,8 @@
     module.exports = require('angular')
         .module('app', [
             'oc.lazyLoad',
-            require('router.module').name
+            require('router.module').name,
+            require('i18n.module').name
         ]);
 
     // we require all files inside `main` directory;

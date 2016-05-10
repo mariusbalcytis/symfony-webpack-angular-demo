@@ -21,7 +21,8 @@
         "sensio/distribution-bundle": "~5.0",
         "sensio/framework-extra-bundle": "^3.0.2",
         "incenteev/composer-parameter-handler": "~2.0",
-        "maba/webpack-bundle": "^0.2.1"
+        "maba/webpack-bundle": "^0.2.2",
+        "willdurand/js-translation-bundle": "^2.5"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",
@@ -35,7 +36,8 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "npm install"
+            "npm install",
+            "php app/console bazinga:js-translation:dump app/Resources/assets"
         ],
         "post-update-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
@@ -44,7 +46,8 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "npm install"
+            "npm install",
+            "php app/console bazinga:js-translation:dump app/Resources/assets"
         ]
     },
     "config": {

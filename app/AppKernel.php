@@ -16,6 +16,8 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Maba\Bundle\WebpackBundle\MabaWebpackBundle(),
+            new Bazinga\Bundle\JsTranslationBundle\BazingaJsTranslationBundle(),
+            
             new AppBundle\AppBundle(),
             new TodoBundle\TodoBundle(),
             new RandomNumberBundle\RandomNumberBundle(),

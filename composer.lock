@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1ca542b318c2554eaea342745d27dbf7",
-    "content-hash": "5c28969f329abfcd41451a48242194a0",
+    "hash": "59073a6d80d3d7dd1b807c614ebb6394",
+    "content-hash": "cebe80a483553f3c5741aed3cf7d3078",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -906,16 +906,16 @@
         },
         {
             "name": "maba/webpack-bundle",
-            "version": "0.2.1",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/mariusbalcytis/webpack-bundle.git",
-                "reference": "c7b9da87b022d250e26fafcdb33a5902e68a20a7"
+                "reference": "d68b55cbb8bd40e1bc144eea0112d508ed2679ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/mariusbalcytis/webpack-bundle/zipball/c7b9da87b022d250e26fafcdb33a5902e68a20a7",
-                "reference": "c7b9da87b022d250e26fafcdb33a5902e68a20a7",
+                "url": "https://api.github.com/repos/mariusbalcytis/webpack-bundle/zipball/d68b55cbb8bd40e1bc144eea0112d508ed2679ad",
+                "reference": "d68b55cbb8bd40e1bc144eea0112d508ed2679ad",
                 "shasum": ""
             },
             "require": {
@@ -957,7 +957,7 @@
                 "symfony",
                 "webpack"
             ],
-            "time": "2016-05-07 19:49:10"
+            "time": "2016-05-09 20:56:46"
         },
         {
             "name": "monolog/monolog",
@@ -2157,6 +2157,65 @@
                 "templating"
             ],
             "time": "2016-01-25 21:22:18"
+        },
+        {
+            "name": "willdurand/js-translation-bundle",
+            "version": "v2.5.0",
+            "target-dir": "Bazinga/Bundle/JsTranslationBundle",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/willdurand/BazingaJsTranslationBundle.git",
+                "reference": "2d449d345ec0f83f9479358c1d37111d0cf3df9a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/willdurand/BazingaJsTranslationBundle/zipball/2d449d345ec0f83f9479358c1d37111d0cf3df9a",
+                "reference": "2d449d345ec0f83f9479358c1d37111d0cf3df9a",
+                "shasum": ""
+            },
+            "require": {
+                "symfony/console": "~2.3|~3.0",
+                "symfony/finder": "~2.3|~3.0",
+                "symfony/framework-bundle": "~2.3|~3.0",
+                "symfony/intl": "~2.3|~3.0"
+            },
+            "replace": {
+                "willdurand/expose-translation-bundle": "2.5.*"
+            },
+            "require-dev": {
+                "symfony/browser-kit": "~2.3|~3.0",
+                "symfony/phpunit-bridge": "~2.7|~3.0",
+                "symfony/twig-bundle": "~2.3|~3.0",
+                "symfony/yaml": "~2.3|~3.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Bazinga\\Bundle\\JsTranslationBundle": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "William Durand",
+                    "email": "will+git@drnd.me"
+                }
+            ],
+            "description": "A pretty nice way to expose your translation messages to your JavaScript.",
+            "keywords": [
+                "javascript",
+                "symfony",
+                "translation"
+            ],
+            "time": "2015-11-10 13:04:08"
         }
     ],
     "packages-dev": [

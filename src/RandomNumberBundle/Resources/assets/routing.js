@@ -11,18 +11,19 @@
     routes.push({
         state: 'randomNumberGenerator',
         url: '/random-number-generator',
-        config: ['$q', function($q) {
-            var deferred = $q.defer();
-            // we use function, promise and `ensure` so that template would be loaded only if route was matched
-            require.ensure([], function() {
-                deferred.resolve({
-                    controller: 'RandomNumber',
-                    controllerAs: 'vm',
-                    template: require('templates/randomNumber.html')
-                });
-            });
-            return deferred.promise;
-        }]
+        config: {
+            controller: 'RandomNumber',
+            controllerAs: 'vm',
+            // let's just use URL to template - this is shorter and clearer
+            templateUrl: require('!!file!templates/randomNumber.html'), // !! to avoid adding pre-configured loaders
+                                                                        // file loader gives URL to a file
+            resolve: {
+                translations: ['translationLoader', function(translationLoader) {
+                    // load translation files before loading the controller
+                    translationLoader.load('security');
+                }]
+            }
+        }
     });
 
     module.exports = routes;

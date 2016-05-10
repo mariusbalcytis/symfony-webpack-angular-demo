@@ -1,3 +1,7 @@
 app:
     resource: "@AppBundle/Resources/config/routing.xml"
     type:     xml
+
+# We do not use this, but this is still needed to generate files via command line
+_bazinga_jstranslation:
+    resource: "@BazingaJsTranslationBundle/Resources/config/routing/routing.yml"

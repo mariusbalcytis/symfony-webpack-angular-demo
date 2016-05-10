@@ -11,3 +11,4 @@
 /bin/
 /composer.phar
 node_modules
+app/Resources/assets/translations
