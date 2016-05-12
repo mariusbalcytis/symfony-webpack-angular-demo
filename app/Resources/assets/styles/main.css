@@ -1,5 +1,3 @@
-div.container {
-    font-family: Verdana, sans-serif;
-    margin: 20px auto;
-    width: 400px;
+.conditionally-loaded {
+    display: none;
 }

@@ -8,9 +8,12 @@
     angular.module('app')
         .factory('bundleRegistry', bundleRegistryFactory);
 
-    bundleRegistryFactory.$inject = ['$ocLazyLoad', '$q', '$log'];
+    bundleRegistryFactory.$inject = ['$ocLazyLoad', '$q', '$log', '$injector'];
 
-    function bundleRegistryFactory($ocLazyLoad, $q, $log) {
+    function bundleRegistryFactory($ocLazyLoad, $q, $log, $injector) {
+        var deferredLoad = $q.defer();
+        var loaded = deferredLoad.promise;
+        prepareBundles();
         return {
             getBundles: getBundles,
             loadByName: loadByName,
@@ -40,13 +43,15 @@
             return $q.all(promises);
         }
         function collectData(itemName) {
-            var result = {};
-            for (var i in bundles) {
-                if (itemName in bundles[i]) {
-                    result[bundles[i].name] = bundles[i][itemName];
+            return loaded.then(function() {
+                var result = {};
+                for (var i in bundles) {
+                    if (itemName in bundles[i]) {
+                        result[bundles[i].name] = bundles[i][itemName];
+                    }
                 }
-            }
-            return result;
+                return result;
+            });
         }
 
         function load(bundle) {
@@ -70,9 +75,34 @@
                 delete loadPromises[bundle.name];
                 loadedBundles[bundle.name] = true;
 
-                deferred.resolve({bundle: bundle, status: 'loaded'});
+                initializeBundle(bundle).then(function() {
+                    deferred.resolve({bundle: bundle, status: 'loaded'});
+                });
             });
             return deferred.promise;
+        }
+
+        function initializeBundle(bundle) {
+            var initResult;
+            if (bundle.init) {
+                initResult = $injector.invoke(bundle.init);
+            }
+            if (!initResult) {
+                initResult = $q.when();
+            }
+            return initResult;
+        }
+
+        function prepareBundles() {
+            var promises = [];
+            for (var i in bundles) {
+                if (bundles[i].prepare) {
+                    promises.push($q.when($injector.invoke(bundles[i].prepare)));
+                }
+            }
+            $q.all(promises).then(function() {
+                deferredLoad.resolve();
+            });
         }
     }
 

@@ -2,11 +2,39 @@
 
 {% block body %}
     {% verbatim %}
-    <div class="container">
-        <a data-ui-sref="todo.list" href="#">ToDo List</a> Should load in 2 seconds.<br/>
-        <a data-ui-sref="randomNumberGenerator" href="#">Random number generator</a><br/><br/>
+        <h1>Symfony + Webpack + AngularJS</h1>
+        <p>Files are loaded asynchronously.</p>
+        <p>Assetic is not used at all.</p>
+        <p>Feel free to play with the code and/or developer tools in your browser.</p>
+        <p>Also feel free to try production version and see how it compares to development.</p>
+        <p>Be sure to refresh pages while in different states to see how it works.</p>
+
+        <ul class="nav nav-pills">
+            <li role="presentation" data-ui-sref-active="active">
+                <a data-ui-sref="todo.list" href="#" data-toggle="tooltip"
+                    title="Will load in 2 seconds">ToDo List</a>
+            </li>
+            <li role="presentation" data-ui-sref-active="active">
+                <a data-ui-sref="randomNumberGenerator" href="#">Random number generator</a>
+            </li>
+        </ul>
+
+        <ul class="list-group">
+            <li class="list-group-item todo-not-loaded">
+                <i class="fa fa-times"></i> ToDo module not loaded
+            </li>
+            <li class="list-group-item conditionally-loaded todo-loaded">
+                <i class="fa fa-check"></i> ToDo module loaded
+            </li>
+            <li class="list-group-item random-not-loaded">
+                <i class="fa fa-times"></i> Random number module not loaded
+            </li>
+            <li class="list-group-item conditionally-loaded random-loaded">
+                <i class="fa fa-check"></i> Random number module loaded
+            </li>
+        </ul>
+
         <div data-ui-view></div>
-    </div>
     {% endverbatim %}
 {% endblock %}
 

@@ -1,0 +1,26 @@
+Todo list:
+<ul>
+    <li data-ng-repeat="todo in vm.todos track by $index" data-ng-bind="todo"></li>
+</ul>
+
+<div class="form-inline">
+    <input type="text" class="form-control" placeholder="Anything to do?" data-ng-model="todoText">
+    <button type="submit" class="btn btn-primary" data-ng-click="vm.todos.push(todoText); todoText = ''">Add ToDo</button>
+</div>
+
+<h3>Collected buttons</h3>
+<p>This button is "collected" from another module (random number).</p>
+<p>Module files will load only when you click on it. Button functionality uses service from that module.</p>
+<p>Some things can still be loaded before other files - for example, button text is translated using Angular service.</p>
+<p>
+    <button class="btn btn-primary"
+            data-ng-repeat="button in vm.buttons track by $index"
+            data-ng-bind="button.text"
+            data-ng-click="button.click()"></button>
+</p>
+
+<h3>Translations</h3>
+<p>Translations are dumped using BazingaJsTranslationBundle (on <code>composer install</code>).</p>
+<p>They can be loaded before loading some module.</p>
+<p>For example, button text is translated. To see it in Lithuanian,
+    <a href="/lt/todo/list" data-toggle="tooltip" title="Page will reload">switch language</a>.</p>

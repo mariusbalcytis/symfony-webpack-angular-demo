@@ -10,5 +10,6 @@
 /vendor/
 /bin/
 /composer.phar
-node_modules
-app/Resources/assets/translations
+/node_modules
+/app/Resources/assets/translations
+/web/compile/

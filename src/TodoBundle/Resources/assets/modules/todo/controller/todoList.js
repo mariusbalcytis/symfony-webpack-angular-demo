@@ -4,12 +4,13 @@
     require('angular').module('app.todo')
         .controller('TodoList', TodoList);
 
-    TodoList.$inject = ['todos'];
+    TodoList.$inject = ['buttons', 'todos'];
 
-    function TodoList(todos) {
+    function TodoList(buttons, todos) {
         /* jshint validthis: true */
         var vm = this;
 
+        vm.buttons = buttons;
         vm.todos = todos;
     }
 })();

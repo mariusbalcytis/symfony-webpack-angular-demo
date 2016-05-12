@@ -1,6 +1,8 @@
 (function() {
     'use strict';
 
+    require('vendors.js');
+
     var angular = require('angular');
     require('oclazyload');
 

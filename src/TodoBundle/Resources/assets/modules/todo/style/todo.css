@@ -1,6 +1,6 @@
-.random-loaded {
+.todo-loaded {
     display: block;
 }
-.random-not-loaded {
+.todo-not-loaded {
     display: none;
 }

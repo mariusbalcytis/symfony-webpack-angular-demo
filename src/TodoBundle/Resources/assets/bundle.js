@@ -11,9 +11,6 @@
                 ]);
             });
         },
-        'tags': [
-            // any tags - not yet used practically
-        ],
         'routing': require('routing')
     }
 })();

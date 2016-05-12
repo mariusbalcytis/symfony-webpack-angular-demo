@@ -38,18 +38,22 @@
 
             function activate() {
                 // get routing data from all the bundles
-                routing = bundleRegistry.collectData('routing');
-
-                for (var bundleName in routing) {
-                    // if URL is as in bundle's routing - load bundle asynchronously
-                    bindAsyncBundleLoading(bundleName);
-                }
-
-                $rootScope.$on('$stateNotFound', function(event, state) {
-                    // if we want to go to some state which is not yet loaded - load bundle asynchronously
-                    if (loadMissingState(state)) {
-                        event.preventDefault();
+                bundleRegistry.collectData('routing').then(function(loadedRouting) {
+                    routing = loadedRouting;
+                    for (var bundleName in routing) {
+                        // if URL is as in bundle's routing - load bundle asynchronously
+                        bindAsyncBundleLoading(bundleName);
                     }
+
+                    $rootScope.$on('$stateNotFound', function(event, state) {
+                        // if we want to go to some state which is not yet loaded - load bundle asynchronously
+                        if (loadMissingState(state)) {
+                            event.preventDefault();
+                        }
+                    });
+
+                    // sync as new routes were loaded
+                    $urlRouter.sync();
                 });
 
                 otherwiseHandler = function($injector, $location) {

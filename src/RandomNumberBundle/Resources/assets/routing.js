@@ -15,14 +15,7 @@
             controller: 'RandomNumber',
             controllerAs: 'vm',
             // let's just use URL to template - this is shorter and clearer
-            templateUrl: require('!!file!templates/randomNumber.html'), // !! to avoid adding pre-configured loaders
-                                                                        // file loader gives URL to a file
-            resolve: {
-                translations: ['translationLoader', function(translationLoader) {
-                    // load translation files before loading the controller
-                    translationLoader.load('security');
-                }]
-            }
+            templateUrl: require('!!file!templates/randomNumber.html') // !! to avoid adding pre-configured loaders
         }
     });
 

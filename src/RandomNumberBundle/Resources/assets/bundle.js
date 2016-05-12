@@ -13,10 +13,17 @@
                 ]);
             });
         },
-        'tags': [
-            // any tags - not yet used practically
-        ],
+        // prepare will be executed BEFORE loading the bundle
+        // use this to initialize anything needed for extensions (like routing and buttons)
+        // you can also use `init` in the same way, it will be executed right AFTER loading bundle
+        'prepare': ['translationLoader', function(translationLoader) {
+            // load translation files after loading the bundle
+            return translationLoader.load(['buttons']); // this can be string or array
+        }],
         // routing data for this bundle
-        'routing': require('routing')
+        'routing': require('routing'),
+
+        // any extensions can go here, this is an example
+        'todo.buttons': require('buttons')
     }
 })();

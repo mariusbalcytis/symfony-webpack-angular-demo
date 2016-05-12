@@ -5,10 +5,19 @@
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <base href="/">
+        {# base path is needed for AngularJS for HTML5 routing mode to work #}
+        {# it must be absolute path (prefix) for angular routes #}
+        {# for example, we have a locale like /en/ #}
+        {# we generate current URL dynamically, removing "anything" part (named by convention) #}
+        <base href="{{ path(
+            app.request.attributes.get('_route'),
+            app.request.attributes.get('_route_params')|merge({anything: ''})
+        ) }}">
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
         {% block javascripts %}{% endblock %}
     </body>
 </html>

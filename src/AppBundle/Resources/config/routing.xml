@@ -4,7 +4,12 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 
-    <route id="app.index" path="/{anything}">
+    <route id="app.home_redirect" path="/">
+        <default key="_controller">FrameworkBundle:Redirect:urlRedirect</default>
+        <default key="path">/en/</default>
+    </route>
+
+    <route id="app.index" path="/{_locale}/{anything}">
         <default key="_controller">FrameworkBundle:Template:template</default>
         <default key="template">default/index.html.twig</default>
         <requirement key="anything">.*</requirement>
