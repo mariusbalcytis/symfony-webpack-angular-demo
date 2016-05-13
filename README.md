@@ -9,6 +9,30 @@ Uses [Webpack](https://webpack.github.io/) for minifying assets and loading them
 
 Uses [MabaWebpackBundle](https://github.com/mariusbalcytis/webpack-bundle) for integrating Webpack into Symfony framework.
 
+## What's in it?
+
+Bootstrapping and common components are in `app/Resources/assets` directory.
+
+Some custom code is inside `Resources/assets` directory in several bundles.
+
+Example shows how to:
+
+- merge files together and minify them in production;
+- include related CSS, Less files (same story would be for Sass);
+- load files asynchronously: whole modules, templates, translations;
+- load modules only if URL matches a route in that module;
+- add extension mechanism between bundles (aka plugins).
+
+Probably due to high influence from Symfony framework, JS files are grouped into bundles.
+
+Bundles are self-contained, but depends on base components.
+
+Bundles have to be registered in `app/Resources/assets/bundles.js` to be loaded.
+
+As it's just an example and not ready-to-use library, see any documentation as comments inside the files.
+
+Feel free to leave your opinion, suggest any improvements or add any solved use-case scenarios via pull requests.
+
 ## Installing
 
 Clone this repository, install dependencies:
